@@ -1,0 +1,20 @@
+<p>index works!</p>
+<div class="container">
+    <form [formGroup]="rolForm" (ngSubmit)="CrearRol()">
+        <div class="mb-3">
+          <label for="exampleInputName1" class="form-label">Nombre</label>
+          <input formControlName="name" type="name" class="form-control" aria-describedby="nameHelp">
+        </div>
+        <div *ngFor="let permission of permission">
+            <label>
+                <input type="checkbox"
+                name="permission[]"
+                [value]="permission.id"
+                [checked]="rolePermissions.includes(permission.id)">
+                {{permission.name}}
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear Rol</button>
+    </form>
+</div>
+    

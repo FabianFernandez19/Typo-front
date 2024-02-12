@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Tipo de Mascota</title>
+</head>
+<body>
+    <form  [formGroup]="tipomascotaForm" (ngSubmit)="agregarTipomascota()" class="form-ficha example-form" id="formtipomascota">
+        <h1>Información del tipo de mascota</h1>
+        <div id="Tipo_Mascota_0">
+            <label for="tipoMascota">Tipo de Mascota:</label>
+            <input formControlName="Tipo_Mascota" type="text" name="Tipo_Mascota" id="Tipo_Mascota">
+        </div>
+        <button type="submit">Crear</button>
+    </form>
+</body>
+</html>

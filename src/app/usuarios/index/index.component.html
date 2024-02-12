@@ -1,0 +1,36 @@
+<p>Usarios</p>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>Telefono</td>
+        <td>Fecha de nacimiento</td>
+        <td>email</td>
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let ap of listaUsuarios">
+        <td>{{ ap.id }}</td>
+        <td>{{ ap.nombre }}</td>
+        <td>{{ ap.apellido }}</td>
+        <td>{{ ap.telefono }}</td>
+        <td>{{ ap.fecha_nacimiento }}</td>
+        <td>{{ ap.email }}</td>
+        <td>
+            <button type="button" (click)="verMascotas(ap.id)">Ver mascotas</button>
+        </td>
+        <td>
+            <!-- <button type="button" (click)="eliminarAprendiz(ap.id)">Eliminar</button> ->
+        </td>
+        <td>
+            <!-- <button type="button" (click)="editarAprendiz(ap.id)">Editar</button> -->
+        </td>
+    </tr>
+    </tbody>
+
+  </table>

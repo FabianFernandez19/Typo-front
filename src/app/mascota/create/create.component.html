@@ -1,0 +1,35 @@
+<form [formGroup]="mascotaForm" (ngSubmit)="agregarMascota()" class="container" id="formenfermedad">
+  <h1 class="mt-5">Información de la Mascota</h1>
+
+  <div class="form-group" id="mascotadiv">
+      <label for="Nombre_Mascota">Nombre de la Mascota</label>
+      <input formControlName="Nombre_Mascota" type="text" class="form-control" id="Nombre_Mascota" required>
+
+      <label for="Edad">Edad</label>
+      <input formControlName="Edad" type="number" class="form-control" id="Edad" required>
+
+      <label for="Raza">Raza</label>
+      <input formControlName="Raza" type="text" class="form-control" id="Raza" required>
+
+      <label for="Peso">Peso</label>
+      <input formControlName="Peso" type="number" class="form-control" id="Peso" required>
+
+      <label for="Tamaño">Tamaño</label>
+      <input formControlName="Tamaño" type="number" class="form-control" id="Tamaño" required>
+
+      <label for="Sexo">Sexo</label>
+      <input formControlName="Sexo" type="text" class="form-control" id="Sexo" required>
+
+      <label for="id_tipomascota">Tipos de mascota</label>
+      <select formControlName="id_tipomascota" class="form-control">
+          <option value="0" selected>Select Tipo de Mascota</option>
+          <option *ngFor="let tipomascota of listatipomascota" [value]="tipomascota.id">{{tipomascota.Tipo_Mascota}}</option>
+      </select>
+
+      <br>
+      <br>
+      <br>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Crear</button>
+</form>

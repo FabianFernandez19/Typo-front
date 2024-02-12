@@ -1,0 +1,24 @@
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tipo de mascota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tipomascota of listaTipomascotas">
+        <td>{{tipomascota.id}}</td>
+        <td>{{tipomascota.Tipo_Mascota}}</td>
+        <td>
+          <button type="button" id="bor" (click)="eliminarTipomascota(tipomascota.id)">Eliminar</button>
+          <button type="button" id="eli"   (click)="editarTipomascota(tipomascota.id)">Editar</button>
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+  <hr />
+  <button type="button" id="crear"  (click)="agregarTipomascota()">Crear tipo de mascota</button>
+
+  

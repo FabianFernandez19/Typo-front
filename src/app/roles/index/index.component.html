@@ -1,0 +1,26 @@
+<p>Roles</p>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Nombre</td>
+      </tr>
+           
+    </thead>
+    <tbody>
+      <tr *ngFor="let ap of listaRoles">
+        <td>{{ ap.id }}</td>
+        <td>{{ ap.name }}</td>
+        <td>
+            <!-- <button type="button" (click)="eliminarAprendiz(ap.id)">Eliminar</button> -->           
+        </td>
+        <td>
+            <!-- <button type="button" (click)="editarAprendiz(ap.id)">Editar</button> -->        
+        </td>
+    </tr>
+    </tbody>
+    
+  </table>
+  
