@@ -6,6 +6,7 @@ export class Mascota {
     Peso: number;
     Tamaño: number;
     Sexo: string | undefined| null;
+    //tiempo_total: string | undefined| null;
     user_id: number;
     id_tipomascota: number;
 

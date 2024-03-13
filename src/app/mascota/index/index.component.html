@@ -1,38 +1,30 @@
-<div *ngIf="user_id">
-  <a class="btn btn-primary" href="/mascota/create/{{user_id}}">Añadir Mascota</a>
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th>ID</th>
-        <th>Nombre de la Mascota</th>
-        <th>Edad</th>
-        <th>Raza</th>
-        <th>Peso</th>
-        <!--<th>Tamaño</th>-->
-        <th>Sexo</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let mascota of listaMascotas">
-        <td>{{mascota.id}}</td>
-        <td>{{mascota.Nombre_Mascota}}</td>
-        <td>{{mascota.Edad}}</td>
-        <td>{{mascota.Raza}}</td>
-        <td>{{mascota.Peso}}</td>
-
-        <!--<td>{{ mascota.Tama&ntilde;o }}</td>-->
-        <td>{{mascota.Sexo}}</td>
-
-        <td>
-          <button class="btn btn-danger" type="button" (click)="eliminarMascota(mascota.id)">Eliminar</button>
-          <button class="btn btn-warning" type="button" (click)="editarMascota(mascota.id)">Editar</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div *ngIf="!user_id">
-  <h1>NO TIENE LOS PERMISOS DE ESTAR ACÁ</h1>
+<div class="container">
+  <ng-container *ngIf="user_id; else noPermisos">
+      <h2 style="text-align: center; margin-bottom: 20px;">Mascotas</h2>
+      <table class="table table-striped" style="width: 100%; border-collapse: collapse;">
+          <thead class="thead-dark" style="color: #fff;">
+              <tr>
+                  <th style="padding: 12px; text-align: left;">ID</th>
+                  <th style="padding: 12px; text-align: left;">Nombre de la Mascota</th>
+                  <th style="padding: 12px; text-align: left;">Edad</th>
+                  <th style="padding: 12px; text-align: left;">Raza</th>
+                  <th style="padding: 12px; text-align: left;">Peso</th>
+                  <th style="padding: 12px; text-align: left;">Sexo</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let mascota of listaMascotas" style="border-bottom: 1px solid #ddd;">
+                  <td style="padding: 12px;">{{ mascota.id }}</td>
+                  <td style="padding: 12px;">{{ mascota.Nombre_Mascota }}</td>
+                  <td style="padding: 12px;">{{ mascota.Edad }}</td>
+                  <td style="padding: 12px;">{{ mascota.Raza }}</td>
+                  <td style="padding: 12px;">{{ mascota.Peso }}</td>
+                  <td style="padding: 12px;">{{ mascota.Sexo }}</td>
+              </tr>
+          </tbody>
+      </table>
+  </ng-container>
+  <ng-template #noPermisos>
+      <h1 style="text-align: center; margin-top: 50px;">NO TIENE LOS PERMISOS DE ESTAR ACÁ</h1>
+  </ng-template>
 </div>

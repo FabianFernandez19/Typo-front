@@ -21,8 +21,19 @@ export class BodyComponent {
     password:''
   });
 
+  access_token: string | null = null;
+
   constructor(private fb: FormBuilder, private loginService:LoginService, 
-    private _router:Router){}
+    private _router:Router){
+
+    }
+
+  ngOnInit(): void{
+    this.access_token = localStorage.getItem('access_token');
+    if (this.access_token) {
+      this._router.navigate(['usuario/index']);
+    }
+  }
 
 
   login(){
@@ -32,7 +43,8 @@ export class BodyComponent {
           if (data!==null) {
             localStorage.setItem('access_token', data?.access_token);
             localStorage.setItem('user_id', data?.user_id);
-            this._router.navigate(['/usuario/index']);
+            //this._router.navigate(['/usuario/index']);
+            window.location.reload();
           }
         }, err => {
           console.log(err);

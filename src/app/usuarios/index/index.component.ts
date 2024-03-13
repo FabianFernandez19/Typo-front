@@ -20,6 +20,8 @@ export class IndexComponent {
 
   ngOnInit():void{
     this.validarToken();
+    console.log(this.clave);
+    
     this.cargarUsuarios();
   }
 

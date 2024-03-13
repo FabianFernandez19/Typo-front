@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Tipo de Mascota</title>
+    <!-- Agrega la referencia a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Agrega estilos personalizados si es necesario -->
+    <style>
+        /* Puedes agregar estilos personalizados aquí si lo deseas */
+    </style>
 </head>
 <body>
-    <form  [formGroup]="tipomascotaForm" (ngSubmit)="agregarTipomascota()" class="form-ficha example-form" id="formtipomascota">
-        <h1>Información del tipo de mascota</h1>
-        <div id="Tipo_Mascota_0">
-            <label for="tipoMascota">Tipo de Mascota:</label>
-            <input formControlName="Tipo_Mascota" type="text" name="Tipo_Mascota" id="Tipo_Mascota">
-        </div>
-        <button type="submit">Crear</button>
-    </form>
+    <div class="container">
+        <form  [formGroup]="tipomascotaForm" (ngSubmit)="agregarTipomascota()" class="form-ficha example-form" id="formtipomascota">
+            <h1>Información del tipo de mascota</h1>
+            <div class="form-group" id="Tipo_Mascota_0">
+                <label for="tipoMascota">Tipo de Mascota:</label>
+                <input formControlName="Tipo_Mascota" type="text" name="Tipo_Mascota" id="Tipo_Mascota" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
+    </div>
+    <!-- Agrega la referencia a Bootstrap JS si es necesario -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

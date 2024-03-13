@@ -1,36 +1,31 @@
-<p>Usarios</p>
-
 <div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <td>Id</td>
-        <td>Nombre</td>
-        <td>Apellido</td>
-        <td>Telefono</td>
-        <td>Fecha de nacimiento</td>
-        <td>email</td>
-      </tr>
-
-    </thead>
-    <tbody>
-      <tr *ngFor="let ap of listaUsuarios">
-        <td>{{ ap.id }}</td>
-        <td>{{ ap.nombre }}</td>
-        <td>{{ ap.apellido }}</td>
-        <td>{{ ap.telefono }}</td>
-        <td>{{ ap.fecha_nacimiento }}</td>
-        <td>{{ ap.email }}</td>
-        <td>
-            <button type="button" (click)="verMascotas(ap.id)">Ver mascotas</button>
-        </td>
-        <td>
-            <!-- <button type="button" (click)="eliminarAprendiz(ap.id)">Eliminar</button> ->
-        </td>
-        <td>
-            <!-- <button type="button" (click)="editarAprendiz(ap.id)">Editar</button> -->
-        </td>
-    </tr>
-    </tbody>
-
+  <h2 style="text-align: center; margin-bottom: 20px;">Usuarios</h2>
+  <table class="table table-striped" style="width: 100%; border-collapse: collapse;">
+      <thead style="background-color: #f2f2f2; border-bottom: 2px solid #ddd; color: #333;">
+          <tr>
+              <th style="padding: 12px; text-align: left;">Id</th>
+              <th style="padding: 12px; text-align: left;">Nombre</th>
+              <th style="padding: 12px; text-align: left;">Apellido</th>
+              <th style="padding: 12px; text-align: left;">Teléfono</th>
+              <th style="padding: 12px; text-align: left;">Fecha de nacimiento</th>
+              <th style="padding: 12px; text-align: left;">Email</th>
+              <th style="padding: 12px; text-align: left;">Acciones</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let usuario of listaUsuarios" style="border-bottom: 1px solid #ddd;">
+              <td style="padding: 12px;">{{ usuario.id }}</td>
+              <td style="padding: 12px;">{{ usuario.nombre }}</td>
+              <td style="padding: 12px;">{{ usuario.apellido }}</td>
+              <td style="padding: 12px;">{{ usuario.telefono }}</td>
+              <td style="padding: 12px;">{{ usuario.fecha_nacimiento }}</td>
+              <td style="padding: 12px;">{{ usuario.email }}</td>
+              <td style="padding: 12px;">
+                  <button class="btn btn-sm btn-info" style="margin-right: 5px;" (click)="verMascotas(usuario.id)">Ver mascotas</button>
+                  <!-- <button class="btn btn-sm btn-danger" (click)="eliminarUsuario(usuario.id)">Eliminar</button> -->
+                  <!-- <button class="btn btn-sm btn-primary" (click)="editarUsuario(usuario.id)">Editar</button> -->
+              </td>
+          </tr>
+      </tbody>
   </table>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>{{ id ? 'Editar Actividad' : 'Crear Nueva Actividad' }}</h2>
+  <form [formGroup]="actividadForm" (ngSubmit)="agregarActividad()">
+    <div class="form-group">
+      <label for="nombre">Nombre de la Actividad:</label>
+      <input type="text" class="form-control" id="nombre_actividad" formControlName="nombre_actividad">
+    </div>
+    <div class="form-group">
+      <label for="descripcion">Descripción de la Actividad:</label>
+      <textarea class="form-control" id="descripcion_actividad" formControlName="descripcion_actividad"></textarea>
+    </div>
+    <div>
+      <br/>
+      <label for="tipoMascota">Tipo de Mascota:</label>
+      <div *ngFor="let data of listaTiposMascota; let i=index">
+        <ng-container *ngIf="exist(data.id); else emptyTasks;">
+          <label>
+            <input type="checkbox" [value]="data.id" (change)="onCheckboxChange($event)" checked="checked" />
+            {{data.Tipo_Mascota}}
+          </label>
+        </ng-container>
+        <ng-template #emptyTasks>
+          <label>
+            <input type="checkbox" [value]="data.id" (change)="onCheckboxChange($event)"  />
+            {{data.Tipo_Mascota}}
+          </label>
+        </ng-template>
+        
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ id ? 'Actualizar' : 'Agregar' }} Actividad</button>
+  </form>
+</div>

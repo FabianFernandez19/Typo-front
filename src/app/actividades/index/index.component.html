@@ -1,0 +1,70 @@
+<!--<div>
+    <h1>Lista de Actividades</h1>
+    <button (click)="agregarActividad()">Agregar Actividad</button>
+  
+    
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let actividad of listaactividades">
+          <td>{{ actividad.id }}</td>
+          <td>{{ actividad.nombre_actividad }}</td>
+          <td>{{ actividad.descripcion_actividad }}</td>
+          <td>
+            <button (click)="editarActividad(actividad.id)">Editar</button>
+            <button (click)="eliminarActividad(actividad.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+ 
+    <div>
+      <label for="tipo">Seleccionar tipo de mascota:</label>
+      <select formControlName="tipo" #tipo (change)="cargarActividadesPorTipoMascota()">
+        <option disabled>Seleccione Tipo de Mascota</option>
+        <option *ngFor="let tipo_mascota of listaTiposMascota" value="{{tipo_mascota.id}}">{{tipo_mascota.Tipo_Mascota}}</option>
+      </select>
+    </div>
+  </div> ¡-->
+  <div class="container">
+    <h1 style="text-align: center; margin-bottom: 20px;">Lista de Actividades</h1>
+    <button class="btn btn-primary mb-3" style="display: block; margin: 0 auto;" (click)="agregarActividad()">Agregar Actividad</button>
+
+    <table class="table table-striped" style="width: 100%; border-collapse: collapse;">
+        <thead style="background-color: #f2f2f2; border-bottom: 2px solid #ddd; color: #333;">
+            <tr>
+                <th style="padding: 12px; text-align: left;">ID</th>
+                <th style="padding: 12px; text-align: left;">Nombre</th>
+                <th style="padding: 12px; text-align: left;">Descripción</th>
+                <th style="padding: 12px; text-align: left;">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let actividad of listaactividades" style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 12px;">{{ actividad.id }}</td>
+                <td style="padding: 12px;">{{ actividad.nombre_actividad }}</td>
+                <td style="padding: 12px;">{{ actividad.descripcion_actividad }}</td>
+                <td style="padding: 12px;">
+                    <button class="btn btn-sm btn-primary" style="margin-right: 5px;" (click)="editarActividad(actividad.id)">Editar</button>
+                    <button class="btn btn-sm btn-danger" (click)="eliminarActividad(actividad.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="form-group" style="margin-top: 20px;">
+        <label for="tipo" style="display: block; text-align: center;">Seleccionar tipo de mascota para ver qué actividades puede realizar:</label>
+        <select class="form-control" id="tipo" formControlName="tipo" #tipo (change)="cargarActividadesPorTipoMascota()" style="width: 50%; margin: 0 auto; display: block;">
+            <option disabled selected>Seleccione Tipo de Mascota</option>
+            <option *ngFor="let tipo_mascota of listaTiposMascota" [value]="tipo_mascota.id">{{ tipo_mascota.Tipo_Mascota }}</option>
+        </select>
+    </div>
+</div>

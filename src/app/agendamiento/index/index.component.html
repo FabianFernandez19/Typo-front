@@ -1,0 +1,32 @@
+<div class="container">
+  <h2 style="text-align: center; margin-bottom: 20px;">Lista de Agendamientos</h2>
+  <div *ngIf="listaagendamientos.length > 0; else noAgendamientos">
+      <table class="table table-striped" style="width: 100%; border-collapse: collapse;">
+          <thead class="thead-dark" style="color: #fff;">
+              <tr>
+                  <th style="padding: 12px; text-align: left;">ID</th>
+                  <th style="padding: 12px; text-align: left;">Tiempo asignado actividad</th>
+                  <th style="padding: 12px; text-align: left;">Fecha de Agendamiento</th>
+                  <th style="padding: 12px; text-align: left;">Cumplida</th>
+                  <th style="padding: 12px; text-align: left;">Info Mascota ID</th>
+                  <th style="padding: 12px; text-align: left;">Actividades ID</th>
+                  <th style="padding: 12px; text-align: left;">User ID</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let agendamiento of listaagendamientos" style="border-bottom: 1px solid #ddd;">
+                  <td style="padding: 12px;">{{ agendamiento.id }}</td>
+                  <td style="padding: 12px;">{{ agendamiento.tiempo_asignado_actividad }}</td>
+                  <td style="padding: 12px;">{{ agendamiento.Fecha_Agendamiento | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+                  <td style="padding: 12px;">{{ agendamiento.cumplida ? 'Sí' : 'No' }}</td>
+                  <td style="padding: 12px;">{{ agendamiento.Nombre_Mascota }}</td>
+                  <td style="padding: 12px;">{{ agendamiento.nombre_actividad }}</td>
+                  <td style="padding: 12px;">{{ agendamiento.name }}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  <ng-template #noAgendamientos>
+      <p style="text-align: center; margin-top: 20px;">No hay agendamientos disponibles.</p>
+  </ng-template>
+</div>
