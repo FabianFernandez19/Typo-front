@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AgendamientoService {
 
-  url='http://127.0.0.1:8000/api/auth/Agendamiento';
+  url='http://192.168.56.1:8000/api/auth/Agendamiento';
   constructor(private http:HttpClient) {  
   }
   obtenerOptions(access_token:any):Object{

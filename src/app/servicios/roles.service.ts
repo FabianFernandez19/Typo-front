@@ -8,7 +8,7 @@ import { Rol } from '../modelos/roles.model';
 })
 export class RolService {
 
-  url = 'http://127.0.0.1:8000/api/auth/rol/';
+  url = 'http://192.168.56.1:8000/api/auth/rol/';
   
   obtenerOptions(access_token:any):Object{
     const headers = new HttpHeaders({

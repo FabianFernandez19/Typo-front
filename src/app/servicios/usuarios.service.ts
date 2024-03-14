@@ -8,7 +8,7 @@ import { Usuario } from '../modelos/usuarios.model';
 })
 export class UsuarioService {
 
-  url = 'http://127.0.0.1:8000/api/auth/Usuario/';
+  url = 'http://192.168.56.1:8000/api/auth/Usuario/';
   
   obtenerOptions(access_token:any):Object{
     const headers = new HttpHeaders({

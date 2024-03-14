@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class LogrosService {
 
-  url='http://127.0.0.1:8000/api/auth/logros/';
+  url='http://192.168.56.1:8000/api/auth/logros/';
   constructor(private http:HttpClient){
 
   }
