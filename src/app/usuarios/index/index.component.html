@@ -15,14 +15,14 @@
       <tbody>
           <tr *ngFor="let usuario of listaUsuarios" style="border-bottom: 1px solid #ddd;">
               <td style="padding: 12px;">{{ usuario.id }}</td>
-              <td style="padding: 12px;">{{ usuario.nombre }}</td>
+              <td style="padding: 12px;">{{ usuario.name }}</td>
               <td style="padding: 12px;">{{ usuario.apellido }}</td>
               <td style="padding: 12px;">{{ usuario.telefono }}</td>
               <td style="padding: 12px;">{{ usuario.fecha_nacimiento }}</td>
               <td style="padding: 12px;">{{ usuario.email }}</td>
               <td style="padding: 12px;">
                   <button class="btn btn-sm btn-info" style="margin-right: 5px;" (click)="verMascotas(usuario.id)">Ver mascotas</button>
-                  <!-- <button class="btn btn-sm btn-danger" (click)="eliminarUsuario(usuario.id)">Eliminar</button> -->
+                   <button class="btn btn-sm btn-danger" (click)="eliminarUsuario(usuario.id)">Eliminar</button> 
                   <!-- <button class="btn btn-sm btn-primary" (click)="editarUsuario(usuario.id)">Editar</button> -->
               </td>
           </tr>

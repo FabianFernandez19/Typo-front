@@ -11,3 +11,5 @@ export class Logros {
         //this.dias = dias;
     }
 }
+
+

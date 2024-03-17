@@ -78,14 +78,14 @@ export class CreateComponent {
     // Obtener el valor de días
    // const diasString: string | null | undefined = this.logroForm.get('dias')?.value;
 
-    // Crear el objeto Logros
+  
     const logro: Logros = {
         tipoLogro: this.logroForm.get('tipoLogro')?.value,
         tiempoSemanal: tiempoSemanalString, // Asignar la cadena de tiempo directamente
        // dias: diasString ? parseInt(diasString, 10) : null // Convertir la cadena de días a un número entero o asignar null si no hay valor
     };
 
-    // Verificar si se va a actualizar o agregar un logro
+   
     if (this.id != null) {
         this.logrosSevice.updatelogro(this.clave, this.id, logro).subscribe(
             data => {
