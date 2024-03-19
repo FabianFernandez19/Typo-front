@@ -24,6 +24,7 @@ export class UsuarioService {
 
   getUsuarios(access_token:any): Observable<any>{ 
     return this.http.get(this.url, this.obtenerOptions(access_token));
+    
   }
 
   addUsuario(usuario: Usuario, access_token:any): Observable<any>{
