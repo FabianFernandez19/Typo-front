@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class tipomascotaService {
 
-  url='http://127.0.0.1:8000/api/auth/Tipomascota/';
+  url='http://10.201.194.14:8000/api/auth/Tipomascota/';
   constructor(private http:HttpClient){
   }
 
